@@ -3,7 +3,7 @@ Contributors: macbookandrew
 Tags: button
 Donate link: https://cash.me/$AndrewRMinionDesign
 Tested up to: 4.5.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -27,6 +27,9 @@ Adds Google Analytics Event Tracking to all Contact Form 7 forms sitewide, using
     1. Click the “Save” button
 
 == Changelog ==
+
+= 1.1 =
+ - Add support for Google Analytics by Yoast
 
 = 1.0 =
  - First stable version
