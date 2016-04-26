@@ -2,7 +2,7 @@
 Contributors: macbookandrew
 Tags: button
 Donate link: https://cash.me/$AndrewRMinionDesign
-Tested up to: 4.5
+Tested up to: 4.5.1
 Stable tag: 1.0
 License: GPL2
 
