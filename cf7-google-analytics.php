@@ -7,6 +7,7 @@ Tags: contact form, contact form 7, google analytics, ga, universal, forms, form
 Version: 1.0
 Author: AndrewRMinion Design
 Author URI: https://www.andrewrminion.com
+GitHub Plugin URI: https://github.com/macbookandrew/cf7-google-analytics
 */
 
 // don't allow calling this file directly
