@@ -1,6 +1,6 @@
 === Contact Form 7 Google Analytics ===
 Contributors: macbookandrew
-Tags: button
+Tags: contact form, contact form 7, google analytics, ga, universal, forms, form, track
 Donate link: https://cash.me/$AndrewRMinionDesign
 Tested up to: 4.5.1
 Stable tag: 1.1
