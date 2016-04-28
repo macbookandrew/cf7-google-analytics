@@ -39,3 +39,5 @@ function wpcf7_ga_tracking( $items, $result ) {
     return $items;
 }
 add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_ga_tracking', 10, 2 );
+
+#TODO: add some more events, similar to https://github.com/ccnokes/psychic-octo-happiness/blob/master/cf7-ga.js
