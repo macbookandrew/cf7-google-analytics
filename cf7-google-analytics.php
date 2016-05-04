@@ -4,7 +4,7 @@ Plugin Name: Contact Form 7 Google Analytics Integration
 Plugin URI: https://andrewrminion.com/contact-form-7-google-analytics/
 Description: Adds Google Analytics Event Tracking to all Contact Form 7 forms.
 Tags: contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals
-Version: 1.1
+Version: 1.2
 Author: AndrewRMinion Design
 Author URI: https://www.andrewrminion.com
 GitHub Plugin URI: https://github.com/macbookandrew/cf7-google-analytics
@@ -21,7 +21,9 @@ function wpcf7_ga_tracking( $items, $result ) {
     $form = WPCF7_ContactForm::get_current();
 
     if ( 'mail_sent' === $result['status'] ) {
-        $items['onSentOk'] = array();
+        if ( ! $items['onSentOk'] ) {
+            $items['onSentOk'] = array();
+        }
 
         $items['onSentOk'][] = sprintf(
                 'if ( typeof ga == "function" ) {
