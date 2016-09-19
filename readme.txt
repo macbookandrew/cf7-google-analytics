@@ -12,6 +12,16 @@ Adds Google Analytics Event Tracking to all Contact Form 7 forms.
 == Description ==
 Adds Google Analytics Event Tracking to all Contact Form 7 forms sitewide, using “Contact Form” as the Event Category, “Send” as the Event Action, and the form name as the Event Label.
 
+Supports the most popular Google Analytics plugins, including the following:
+
+- [Google Analytics by MonsterInsights](https://wordpress.org/plugins/google-analytics-for-wordpress/), formerly “Google Analytics by Yoast”
+- [Google Analytics Dashboard for WP](https://wordpress.org/plugins/google-analytics-dashboard-for-wp/) by Alin Marcu
+- [Google Analytics](https://wordpress.org/plugins/googleanalytics/) by Kevin Sylvestre
+- [Google Analytics](https://wordpress.org/plugins/pc-google-analytics/) by Praveen Chauhan
+- The default Google Analytics code copied from the Analytics admin panel
+- Any other plugin using `ga`, `_gaq`, or `__gaTracker` as the Javascript function
+- To add others, [open a pull request](https://github.com/macbookandrew/cf7-google-analytics)
+
 == Installation ==
 1. Install the plugin
 1. Check your statistics in Google Analytics under Behavior > Events or under Real-Time > Events
