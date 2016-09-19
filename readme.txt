@@ -4,7 +4,7 @@ Tags: contact form, contact form 7, cf7, contactform7, google analytics, ga, uni
 Donate link: https://cash.me/$AndrewRMinionDesign
 Requires at least: 4.3
 Tested up to: 4.6
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -28,6 +28,9 @@ Adds Google Analytics Event Tracking to all Contact Form 7 forms sitewide, using
     1. Click the “Save” button
 
 == Changelog ==
+
+= 1.2.2 =
+ - Fix JS issue if `ga` is undefined
 
 = 1.2.1 =
  - Fix PHP undefined index issue
