@@ -18,6 +18,7 @@ Supports the most popular Google Analytics plugins, including the following:
 - [Google Analytics Dashboard for WP](https://wordpress.org/plugins/google-analytics-dashboard-for-wp/) by Alin Marcu
 - [Google Analytics](https://wordpress.org/plugins/googleanalytics/) by Kevin Sylvestre
 - [Google Analytics](https://wordpress.org/plugins/pc-google-analytics/) by Praveen Chauhan
+- [Analytics Tracker](https://wordpress.org/plugins/analytics-tracker/) by Valeriu Tihai
 - The default Google Analytics code copied from the Analytics admin panel
 - Any other plugin using `ga`, `_gaq`, or `__gaTracker` as the Javascript function
 - To add others, [open a pull request](https://github.com/macbookandrew/cf7-google-analytics)
