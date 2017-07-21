@@ -41,8 +41,17 @@ module.exports = function( grunt ) {
                 }
             }
         },
+
+        uglify: {
+            target: {
+                files: {
+                    'js/cf7-google-analytics.min.js': ['js/cf7-google-analytics.js']
+                }
+            }
+        }
     } );
 
+    grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-wp-i18n' );
     grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
     grunt.registerTask( 'i18n', ['addtextdomain', 'makepot'] );
