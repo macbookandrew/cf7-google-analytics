@@ -4,10 +4,9 @@ Plugin Name: Contact Form 7 Google Analytics Integration
 Plugin URI: https://andrewrminion.com/contact-form-7-google-analytics/
 Description: Adds Google Analytics Event Tracking to all Contact Form 7 forms.
 Tags: contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals
-Version: 1.2.2
+Version: 1.3.0
 Author: AndrewRMinion Design
 Author URI: https://www.andrewrminion.com
-GitHub Plugin URI: https://github.com/macbookandrew/cf7-google-analytics
 */
 
 // don't allow calling this file directly
@@ -15,17 +14,23 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// add GA event tracking to all WPCF7 forms
-// thanks to https://github.com/kasparsd/contact-form-7-extras/ for the starter code
+/**
+ * Send Google Analytics tracking events when form is successfully submitted
+ * @param  array $items  return from CF7
+ * @param  array $result WPCF7 data about status, message, etc.
+ * @return array modified array to return to the browser
+ */
 function wpcf7_ga_tracking( $items, $result ) {
-    $form = WPCF7_ContactForm::get_current();
+    // continue only if using an older WPCF7 without DOM events
+    if ( WPCF7_VERSION <= 4.7 ) {
+        $form = WPCF7_ContactForm::get_current();
 
-    if ( 'mail_sent' === $result['status'] ) {
-        if ( ! isset( $items['onSentOk'] ) ) {
-            $items['onSentOk'] = array();
-        }
+        if ( 'mail_sent' === $result['status'] ) {
+            if ( ! isset( $items['onSentOk'] ) ) {
+                $items['onSentOk'] = array();
+            }
 
-        $items['onSentOk'][] = sprintf(
+            $items['onSentOk'][] = sprintf(
                 'if ( typeof ga !== "undefined" ) {
                     ga( "send", "event", "Contact Form", "Sent", "%1$s" );
                 }
@@ -37,7 +42,17 @@ function wpcf7_ga_tracking( $items, $result ) {
                 }',
                 esc_js( $form->title() )
             );
+        }
     }
+
     return $items;
 }
 add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_ga_tracking', 10, 2 );
+
+/**
+ * Enqueue script for DOM events
+ */
+function wpcf7_ga_assets() {
+    wp_enqueue_script( 'wpcf7-ga-events', plugin_dir_url( __FILE__ ) . 'js/cf7-google-analytics.min.js', array( 'contact-form-7' ), NULL, true );
+}
+add_action( 'wp_enqueue_scripts', 'wpcf7_ga_assets' );
