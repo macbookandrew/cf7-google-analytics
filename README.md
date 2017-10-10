@@ -4,7 +4,7 @@
 **Donate link:** https://cash.me/$AndrewRMinionDesign  
 **Requires at least:** 4.3  
 **Tested up to:** 4.8  
-**Stable tag:** 1.3.0  
+**Stable tag:** 1.4.0  
 **License:** GPL2  
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -19,8 +19,8 @@ Supports the most popular Google Analytics plugins, including the following:
 - [Google Analytics](https://wordpress.org/plugins/googleanalytics/) by Kevin Sylvestre
 - [Google Analytics](https://wordpress.org/plugins/pc-google-analytics/) by Praveen Chauhan
 - [Analytics Tracker](https://wordpress.org/plugins/analytics-tracker/) by Valeriu Tihai
-- The default Google Analytics code copied from the Analytics admin panel
-- Any other plugin using `ga`, `_gaq`, or `__gaTracker` as the Javascript function
+- The default Google Analytics code copied from the Analytics admin panel (both the newer gtag.js and the older universal analytics.js)
+- Any other plugin using `gtag`, `ga`, `_gaq`, or `__gaTracker` as the Javascript function
 - To add others, [open a pull request](https://github.com/macbookandrew/cf7-google-analytics)
 
 ## Installation ##
@@ -39,6 +39,9 @@ Supports the most popular Google Analytics plugins, including the following:
     1. Click the “Save” button
 
 ## Changelog ##
+
+### 1.4.0 ###
+ - Add support for the Global Site Tag (gtag.js)
 
 ### 1.3.0 ###
  - Update to use new DOM events in Contact Form 7 v4.8
