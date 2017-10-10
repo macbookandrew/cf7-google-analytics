@@ -9,6 +9,8 @@ Author: AndrewRMinion Design
 Author URI: https://www.andrewrminion.com
 */
 
+const CF7_GA_VERSION = '1.4.0';
+
 // don't allow calling this file directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -56,6 +58,6 @@ add_filter( 'wpcf7_ajax_json_echo', 'wpcf7_ga_tracking', 10, 2 );
  * Enqueue script for DOM events
  */
 function wpcf7_ga_assets() {
-    wp_enqueue_script( 'wpcf7-ga-events', plugin_dir_url( __FILE__ ) . 'js/cf7-google-analytics.min.js', array( 'contact-form-7' ), NULL, true );
+    wp_enqueue_script( 'wpcf7-ga-events', plugin_dir_url( __FILE__ ) . 'js/cf7-google-analytics.min.js', array( 'contact-form-7' ), CF7_GA_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'wpcf7_ga_assets' );
