@@ -7,8 +7,16 @@ document.addEventListener('wpcf7submit', function(event) {
  * @param {string} formId WP post ID for the CF7 form
  */
 function cf7GASendTrackingEvent(formId) {
-    // universal Google Analytics tracking code
-    // Google Analytics Dashboard for WordpPress (GADWP) (new)
+    // Global Site Tag (gtag.js)
+    if ( typeof gtag !== "undefined" ) {
+        gtag( "event", "Contact Form", {
+            "event_action": "Sent",
+            "event_label": "Form ID " + formId
+        });
+    }
+
+    // universal Google Analytics tracking code (analytics.js)
+    // Google Analytics Dashboard for WordpPress (GADWP)
     if ( typeof ga !== "undefined" ) {
         ga( "send", "event", "Contact Form", "Sent", "Form ID " + formId );
     }
