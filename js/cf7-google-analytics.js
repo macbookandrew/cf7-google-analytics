@@ -9,7 +9,8 @@ document.addEventListener('wpcf7submit', function(event) {
 function cf7GASendTrackingEvent(formId) {
     // Global Site Tag (gtag.js)
     if ( typeof gtag !== "undefined" ) {
-        gtag( "event", "Contact Form", {
+        gtag( "event", "contact_form_7", {
+            "event_category": "Contact Form 7",
             "event_action": "Sent",
             "event_label": "Form ID " + formId
         });
