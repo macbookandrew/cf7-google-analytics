@@ -24,19 +24,28 @@ Supports the most popular Google Analytics plugins, including the following:
 - To add others, [open a pull request](https://github.com/macbookandrew/cf7-google-analytics)
 
 ## Installation ##
-1. Install the plugin
-1. Check your statistics in Google Analytics under Behavior > Events or under Real-Time > Events
-1. Optionally, to set up a goal, follow these steps:
-    1. Click on “Admin” in your Google Analytics account menubar
-    1. In the right-most column (“View”), click on “Goals”
-    1. Click on the “+ New Goal” button
-    1. Choose the “Template” radio button (selected by default) and click “Continue”
-    1. Enter a name for the goal (I suggest “Contact Forms”)
-    1. Choose the “Event” radio button and click “Continue”
-    1. Set “Category Equals to Contact Form”
-    1. Set “Action Equals to Send”
-    1. Optionally add a label if you want to define a goal for one specific form
-    1. Click the “Save” button
+1. Install and activate the plugin
+1. Enjoy!
+
+## Frequently-Asked Questions ##
+
+### Where will events show up? ###
+
+Check your statistics in Google Analytics under *Behavior > Events* or under *Real-Time > Events*
+
+### How do I set a goal in Google Analytics? ###
+
+1. Click on “Admin” in your Google Analytics account menubar
+1. In the right-most column (“View”), click on “Goals”
+1. Click on the “+ New Goal” button
+1. Choose the “Template” radio button (selected by default) and click “Continue”
+1. Enter a name for the goal (I suggest “Contact Forms”)
+1. Choose the “Event” radio button and click “Continue”
+1. Set “Category Equals to Contact Form”
+1. Set “Action Equals to Sent”
+1. Optionally add a label if you want to define a goal for one specific form
+1. Click the “Save” button
+
 
 ## Changelog ##
 
