@@ -23,6 +23,15 @@ function cf7GASendTrackingEvent(formId) {
         });
     }
 
+    // Google Tag Manager (gtm.js)
+    if ( typeof dataLayer !== "undefined" ) {
+        dataLayer.push({
+            "event": "Contact Form 7",
+            "event_action": "Sent",
+            "event_label": formLabel
+        });
+    }
+
     // universal Google Analytics tracking code (analytics.js)
     // Google Analytics Dashboard for WordpPress (GADWP)
     if ( typeof ga !== "undefined" ) {
