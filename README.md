@@ -4,7 +4,7 @@
 **Donate link:** https://cash.me/$AndrewRMinionDesign  
 **Requires at least:** 4.3  
 **Tested up to:** 4.8  
-**Stable tag:** 1.6.0  
+**Stable tag:** 1.6.1  
 **License:** GPL2  
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -49,6 +49,9 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 
 
 ## Changelog ##
+
+### 1.6.1 ###
+ - Add support for PHP < 5.3
 
 ### 1.6.0 ###
  - Add support for Google Tag Manager
