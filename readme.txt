@@ -40,12 +40,14 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 1. In the right-most column (“View”), click on “Goals”
 1. Click on the “+ New Goal” button
 1. Choose the “Template” radio button (selected by default) and click “Continue”
-1. Enter a name for the goal (I suggest “Contact Forms”)
-1. Choose the “Event” radio button and click “Continue”
-1. Set “Category Equals to Contact Form”
-1. Set “Action Equals to Sent”
-1. Optionally add a label if you want to define a goal for one specific form
-1. Click the “Save” button
+1. Set the Goal description
+    1. Enter a name for the goal (I suggest “Contact Forms”)
+    1. Choose the “Event” radio button and click “Continue”
+1. Set the Goal details
+    1. Set “Category Equals to Contact Form”
+    1. Set “Action Equals to Sent”
+    1. Optionally add a label if you want to define a goal for one specific form
+    1. Click the “Save” button
 
 
 == Changelog ==
