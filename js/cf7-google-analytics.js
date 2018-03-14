@@ -1,12 +1,36 @@
+/** See https://contactform7.com/dom-events/ */
+
+/** Invalid: Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because there are fields with invalid input */
+document.addEventListener('wpcf7invalid', function(event) {
+    cf7GASendTrackingEvent(event.detail.contactFormId, "Invalid");
+}, false );
+
+/** Spam: Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because a possible spam activity has been detected */
+document.addEventListener('wpcf7spam', function(event) {
+    cf7GASendTrackingEvent(event.detail.contactFormId, "Spam");
+}, false );
+
+/** Mail Sent: Fires when an Ajax form submission has completed successfully, and mail has been sent */
+document.addEventListener('wpcf7mailsent', function(event) {
+    cf7GASendTrackingEvent(event.detail.contactFormId, "Mail Sent");
+}, false );
+
+/** Mail Failed: Fires when an Ajax form submission has completed successfully, but it has failed in sending mail */
+document.addEventListener('wpcf7mailfailed', function(event) {
+    cf7GASendTrackingEvent(event.detail.contactFormId, "Mail Failed");
+}, false );
+
+/** Submit: Fires when an Ajax form submission has completed successfully, regardless of other incidents */
 document.addEventListener('wpcf7submit', function(event) {
-    cf7GASendTrackingEvent(event.detail.contactFormId);
+    cf7GASendTrackingEvent(event.detail.contactFormId, "Sent"); // possibly misleading; change to “Submit”?
 }, false );
 
 /**
  * Send tracking data
- * @param {string} formId WP post ID for the CF7 form
+ * @param {string} formId     WP post ID for the CF7 form
+ * @param {string} eventLabel CF7 custom DOM event label
  */
-function cf7GASendTrackingEvent(formId) {
+function cf7GASendTrackingEvent(formId, eventLabel) {
     // get name of CF7 form
     if (typeof cf7FormIDs === 'object') {
         var formLabel = cf7FormIDs["ID_" + formId];
@@ -18,7 +42,7 @@ function cf7GASendTrackingEvent(formId) {
     if ( typeof gtag !== "undefined" ) {
         gtag( "event", "contact_form_7", {
             "event_category": "Contact Form 7",
-            "event_action": "Sent",
+            "event_action": eventLabel,
             "event_label": formLabel
         });
     }
@@ -27,7 +51,7 @@ function cf7GASendTrackingEvent(formId) {
     if ( typeof dataLayer !== "undefined" ) {
         dataLayer.push({
             "event": "Contact Form 7",
-            "event_action": "Sent",
+            "event_action": eventLabel,
             "event_label": formLabel
         });
     }
@@ -35,16 +59,16 @@ function cf7GASendTrackingEvent(formId) {
     // universal Google Analytics tracking code (analytics.js)
     // Google Analytics Dashboard for WordpPress (GADWP)
     if ( typeof ga !== "undefined" ) {
-        ga( "send", "event", "Contact Form", "Sent", formLabel );
+        ga( "send", "event", "Contact Form", eventLabel, formLabel );
     }
 
     // classic Google Analytics default code
     if ( typeof _gaq !== "undefined" ) {
-        _gaq.push([ "_trackEvent", "Contact Form", "Sent", formLabel ]);
+        _gaq.push([ "_trackEvent", "Contact Form", eventLabel, formLabel ]);
     }
 
     // Monster Insights
     if ( typeof __gaTracker !== "undefined" ) {
-        __gaTracker( "send", "event", "Contact Form", "Sent", formLabel );
+        __gaTracker( "send", "event", "Contact Form", eventLabel, formLabel );
     }
 }

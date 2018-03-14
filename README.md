@@ -4,13 +4,13 @@
 **Donate link:** https://cash.me/$AndrewRMinionDesign  
 **Requires at least:** 4.3  
 **Tested up to:** 4.8  
-**Stable tag:** 1.6.1  
+**Stable tag:** 1.7.0  
 **License:** GPL2  
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
 
 ## Description ##
-Adds Google Analytics Event Tracking to all Contact Form 7 forms sitewide, using “Contact Form” as the Event Category, “Send” as the Event Action, and the form name as the Event Label.
+Adds Google Analytics Event Tracking to all Contact Form 7 forms sitewide, using “Contact Form” as the Event Category, the Contact Form 7 event as the Event Action, and the form name as the Event Label.
 
 Supports the most popular Google Analytics plugins, including the following:
 
@@ -34,6 +34,16 @@ Supports the most popular Google Analytics plugins, including the following:
 
 Check your statistics in Google Analytics under *Behavior > Events* or under *Real-Time > Events*
 
+### What events will be shown? ###
+
+- **Invalid** - Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because there are fields with invalid input.
+- **Spam** - Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because a possible spam activity has been detected.
+- **Mail Sent** - Fires when an Ajax form submission has completed successfully, and mail has been sent.
+- **Mail Failed** - Fires when an Ajax form submission has completed successfully, but it has failed in sending mail.
+- **Sent** - Fires when an Ajax form submission has completed successfully, regardless of other incidents. (This is the old plugin behavior.)
+
+**Note:** you will begin seeing duplicate events for each form submission in Google Analytics: “Sent” plus one of the other four, based on what happened on submission.  
+
 ### How do I set a goal in Google Analytics? ###
 
 1. Click on “Admin” in your Google Analytics account menubar
@@ -45,42 +55,45 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
     1. Choose the “Event” radio button and click “Continue”
 1. Set the Goal details
     1. Set “Category Equals to Contact Form”
-    1. Set “Action Equals to Sent”
+    1. Set “Action Equals to ” and  enter the event you wish to track (see above for a list of events)
     1. Optionally add a label if you want to define a goal for one specific form
     1. Click the “Save” button
 
 
 ## Changelog ##
 
+### 1.7.0 ###
+- Add support for all CF7 DOM events. Please [see this note for more detail](https://github.com/macbookandrew/cf7-google-analytics#what-events-will-be-shown).
+
 ### 1.6.1 ###
- - Add support for PHP < 5.3
+- Add support for PHP < 5.3
 
 ### 1.6.0 ###
- - Add support for Google Tag Manager
+- Add support for Google Tag Manager
 
 ### 1.5.0 ###
- - Add support for sending the Contact Form 7 form name instead of just the form ID
+- Add support for sending the Contact Form 7 form name instead of just the form ID
 
 ### 1.4.1 ###
- - Update suppoprt for gtag.js custom events
+- Update suppoprt for gtag.js custom events
 
 ### 1.4.0 ###
- - Add support for the Global Site Tag (gtag.js)
+- Add support for the Global Site Tag (gtag.js)
 
 ### 1.3.0 ###
- - Update to use new DOM events in Contact Form 7 v4.8
+- Update to use new DOM events in Contact Form 7 v4.8
 
 ### 1.2.2 ###
- - Fix JS issue if `ga` is undefined
+- Fix JS issue if `ga` is undefined
 
 ### 1.2.1 ###
- - Fix PHP undefined index issue
+- Fix PHP undefined index issue
 
 ### 1.2 ###
- - Fix issue where any manually-specified items were being deleted
+- Fix issue where any manually-specified items were being deleted
 
 ### 1.1 ###
- - Add support for Google Analytics by Yoast
+- Add support for Google Analytics by Yoast
 
 ### 1.0 ###
- - First stable version
+- First stable version
