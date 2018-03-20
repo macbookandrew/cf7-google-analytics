@@ -42,7 +42,7 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 - **Mail Failed** - Fires when an Ajax form submission has completed successfully, but it has failed in sending mail.
 - **Sent** - Fires when an Ajax form submission has completed successfully, regardless of other incidents. (This is the old plugin behavior.)
 
-Note: you will begin seeing duplicate events for each form submission in Google Analytics: “Sent” plus one of the other four, based on what happened on submission.
+Note: you will begin seeing duplicate events in Google Analytics for each form submission: “Sent” plus one of the other four, depending on what happened on submission.
 
 = How do I set a goal in Google Analytics? =
 

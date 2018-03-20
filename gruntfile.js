@@ -45,7 +45,8 @@ module.exports = function( grunt ) {
         uglify: {
             target: {
                 files: {
-                    'js/cf7-google-analytics.min.js': ['js/cf7-google-analytics.js']
+                    'js/cf7-google-analytics.min.js': ['js/cf7-google-analytics.js'],
+                    'js/admin.min.js': ['js/admin.js']
                 }
             }
         }
