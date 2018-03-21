@@ -1,11 +1,11 @@
 # Contact Form 7 Google Analytics #
-**Contributors:** macbookandrew
-**Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals
-**Donate link:** https://cash.me/$AndrewRMinionDesign
-**Requires at least:** 4.3
-**Tested up to:** 4.8
-**Stable tag:** 1.7.0
-**License:** GPL2
+**Contributors:** macbookandrew  
+**Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals  
+**Donate link:** https://cash.me/$AndrewRMinionDesign  
+**Requires at least:** 4.3  
+**Tested up to:** 4.8  
+**Stable tag:** 1.7.1  
+**License:** GPL2  
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
 
@@ -42,7 +42,7 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 - **Mail Failed** - Fires when an Ajax form submission has completed successfully, but it has failed in sending mail.
 - **Sent** - Fires when an Ajax form submission has completed successfully, regardless of other incidents. (This is the old plugin behavior.)
 
-**Note:** you will begin seeing duplicate events in Google Analytics for each form submission: “Sent” plus one of the other four, depending on what happened on submission.
+**Note:** you will begin seeing duplicate events in Google Analytics for each form submission: “Sent” plus one of the other four, depending on what happened on submission.  
 
 ### How do I set a goal in Google Analytics? ###
 
@@ -61,6 +61,9 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 
 
 ## Changelog ##
+
+### 1.7.1 ###
+- Fix error with admin notice on PHP < 5.0
 
 ### 1.7.0 ###
 - Add support for all CF7 DOM events. Please [see this note for more detail](https://github.com/macbookandrew/cf7-google-analytics#what-events-will-be-shown).
