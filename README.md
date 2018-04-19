@@ -20,7 +20,7 @@ Supports the most popular Google Analytics plugins, including the following:
 - [Google Analytics](https://wordpress.org/plugins/pc-google-analytics/) by Praveen Chauhan
 - [Analytics Tracker](https://wordpress.org/plugins/analytics-tracker/) by Valeriu Tihai
 - The default Google Analytics code copied from the Analytics admin panel (both the newer `gtag.js` and the older universal `analytics.js`)
-- Google Tag Manager (using `gtm.js`)
+- Google Tag Manager (using `gtm.js`) (see additional setup instructions in the FAQ section)
 - Any other plugin using `gtag`, `ga`, `_gaq`, or `__gaTracker` as the Javascript function
 - To add others, [open a pull request](https://github.com/macbookandrew/cf7-google-analytics)
 
@@ -32,7 +32,7 @@ Supports the most popular Google Analytics plugins, including the following:
 
 ### Where will events show up? ###
 
-Check your statistics in Google Analytics under *Behavior > Events* or under *Real-Time > Events*
+Check your statistics in Google Analytics under *Behavior > Events* or under *Real-Time > Events*.
 
 ### What events will be shown? ###
 
@@ -59,6 +59,23 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
     1. Optionally add a label if you want to define a goal for one specific form
     1. Click the “Save” button
 
+### How to I use this with Google Tag Manager (`gtm.js`)? ###
+
+1. In your Google Tag Manager workspace, add a new Trigger.
+    1. Choose trigger type: “Other/Custom Event”  
+    1. Set “Event name” to “Contact Form 7”
+    1. Set “This trigger fires on” to “Some Custom Events”
+    1. Set the dropdowns to “Event contains Contact Form 7”
+       ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-trigger.png?raw=true)
+    1. Save the trigger
+1. In your Google Tag Manager workspace, add a new Tag.
+    1. Choose tag type: “Universal Analytics”  
+    1. Change “Track Type” to “Event”
+    1. Set “Category” to “Contact Form 7”
+    1. Set “Label” to “{{Event}}”
+      ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-tag.png?raw=true)
+    1. Click in the “Triggering” box and choose the trigger you set up above.
+1. Save and publish your changes.
 
 ## Changelog ##
 
