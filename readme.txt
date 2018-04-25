@@ -4,7 +4,7 @@ Tags: contact form, contact form 7, cf7, contactform7, google analytics, ga, uni
 Donate link: https://cash.me/$AndrewRMinionDesign
 Requires at least: 4.3
 Tested up to: 4.8
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -28,7 +28,7 @@ Supports the most popular Google Analytics plugins, including the following:
 1. Install and activate the plugin
 1. Enjoy!
 
-== Frequently-Asked Questions ==
+== Frequently Asked Questions ==
 
 = Where will events show up? =
 
@@ -78,6 +78,10 @@ Note: you will begin seeing duplicate events in Google Analytics for each form s
 1. Save and publish your changes.
 
 == Changelog ==
+
+= 1.7.3 =
+- Add [`gtm.js` setup instructions](https://github.com/macbookandrew/cf7-google-analytics#how-to-i-use-this-with-google-tag-manager-gtmjs)
+- Update plugin coding standards
 
 = 1.7.2 =
 - Fix error with undefined constant

@@ -1,11 +1,11 @@
 # Contact Form 7 Google Analytics #
-**Contributors:** macbookandrew  
-**Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals  
-**Donate link:** https://cash.me/$AndrewRMinionDesign  
-**Requires at least:** 4.3  
-**Tested up to:** 4.8  
-**Stable tag:** 1.7.2  
-**License:** GPL2  
+**Contributors:** macbookandrew
+**Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals
+**Donate link:** https://cash.me/$AndrewRMinionDesign
+**Requires at least:** 4.3
+**Tested up to:** 4.8
+**Stable tag:** 1.7.3
+**License:** GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
 
@@ -28,7 +28,7 @@ Supports the most popular Google Analytics plugins, including the following:
 1. Install and activate the plugin
 1. Enjoy!
 
-## Frequently-Asked Questions ##
+## Frequently Asked Questions ##
 
 ### Where will events show up? ###
 
@@ -42,7 +42,7 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 - **Mail Failed** - Fires when an Ajax form submission has completed successfully, but it has failed in sending mail.
 - **Sent** - Fires when an Ajax form submission has completed successfully, regardless of other incidents. (This is the old plugin behavior.)
 
-**Note:** you will begin seeing duplicate events in Google Analytics for each form submission: “Sent” plus one of the other four, depending on what happened on submission.  
+**Note:** you will begin seeing duplicate events in Google Analytics for each form submission: “Sent” plus one of the other four, depending on what happened on submission.
 
 ### How do I set a goal in Google Analytics? ###
 
@@ -62,14 +62,14 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 ### How to I use this with Google Tag Manager (`gtm.js`)? ###
 
 1. In your Google Tag Manager workspace, add a new Trigger.
-    1. Choose trigger type: “Other/Custom Event”  
+    1. Choose trigger type: “Other/Custom Event”
     1. Set “Event name” to “Contact Form 7”
     1. Set “This trigger fires on” to “Some Custom Events”
     1. Set the dropdowns to “Event contains Contact Form 7”
        ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-trigger.png?raw=true)
     1. Save the trigger
 1. In your Google Tag Manager workspace, add a new Tag.
-    1. Choose tag type: “Universal Analytics”  
+    1. Choose tag type: “Universal Analytics”
     1. Change “Track Type” to “Event”
     1. Set “Category” to “Contact Form 7”
     1. Set “Label” to “{{Event}}”
@@ -78,6 +78,10 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 1. Save and publish your changes.
 
 ## Changelog ##
+
+### 1.7.3 ###
+- Add [`gtm.js` setup instructions](https://github.com/macbookandrew/cf7-google-analytics#how-to-i-use-this-with-google-tag-manager-gtmjs)
+- Update plugin coding standards
 
 ### 1.7.2 ###
 - Fix error with undefined constant
