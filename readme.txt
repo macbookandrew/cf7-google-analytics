@@ -30,6 +30,20 @@ Supports the most popular Google Analytics plugins, including the following:
 
 == Frequently Asked Questions ==
 
+= What about GDPR (General Data Protection Regulation)? =
+
+This plugin does not collect or send any personal information or form submissions to Google Analytics. The only form-related information sent is the name of the form and the submission result (invalid, spam, mail sent, mail failed, and sent).
+
+Google Analytics does collect more information including, but not limited to, the following:
+
+- Page name, URL, and language
+- Screen and window size
+- The user’s IP address
+
+For more information, refer to [Google’s compliance information](https://privacy.google.com/businesses/compliance/#?modal_active=none).
+
+Please also note that Contact Form 7 and other plugins may collect, process, or store user data.
+
 = Where will events show up? =
 
 Check your statistics in Google Analytics under *Behavior > Events* or under *Real-Time > Events*.
@@ -66,14 +80,14 @@ Note: you will begin seeing duplicate events in Google Analytics for each form s
 	1. Set “Event name” to “Contact Form 7”
 	1. Set “This trigger fires on” to “Some Custom Events”
 	1. Set the dropdowns to “Event contains Contact Form 7”
-	   ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-trigger.png?raw=true)
+	   - ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-trigger.png?raw=true)
 	1. Save the trigger
 1. In your Google Tag Manager workspace, add a new Tag.
 	1. Choose tag type: “Universal Analytics”
 	1. Change “Track Type” to “Event”
 	1. Set “Category” to “Contact Form 7”
 	1. Set “Label” to “{{Event}}”
-	  ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-tag.png?raw=true)
+		- ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-tag.png?raw=true)
 	1. Click in the “Triggering” box and choose the trigger you set up above.
 1. Save and publish your changes.
 
