@@ -33,16 +33,16 @@ class CF7_Google_Analytics {
 	 * Load everything
 	 */
 	public function __construct() {
-		/** Enqueue the main JS file */
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+		/** Check version and load the correct file */
+		$wpcf7 = get_option( 'wpcf7' );
+		if ( $wpcf7['version'] <= '4.7' ) {
+			add_filter( 'wpcf7_ajax_json_echo', array( $this, 'add_old_tracking' ), 10, 2 );
+		} else {
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+		}
 
 		/** Register backend assets */
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backend_assets' ) );
-
-		/** Add old tracking */
-		if ( get_option( 'wpcf7' )['version'] <= '4.7' ) {
-			add_filter( 'wpcf7_ajax_json_echo', array( $this, 'add_old_tracking' ), 10, 2 );
-		}
 
 		/** Add notice about v1.7.0 changes */
 		if ( get_option( 'cf7-ga-170-notice-dismissed' ) === false ) {
