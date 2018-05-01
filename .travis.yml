@@ -6,8 +6,7 @@ notifications:
     on_success: never
     on_failure: change
   slack:
-    rooms:
-      secure: Lrfd3L6czMIztS2oR4ciAJCAVWfrYwoM1JuUXcM0HKtBNob2OT3d79k5eu7OjvzBZUGKlGY/6yNla/UNRFy/Q9g26zaVN6b8lImlq1rLZuuzMAoPGx450gC4sdXauzU+9RNYPUtVJ6zPeqTzwfLRS0vcK1UMH7G0Q548hYmddnMWEEAU9A59FDo795eetdG6uZ02ZeRT9Z6vtGmQVCYW/nWurLBgfYrV4sNn2aUqPKCdHbc3CpJBzQd0Q4MD4S4o8m212SnEpbX1EJTDBQ+Bi1jjzlcRZsQabi0AsE8VWlrgsr0nwsk2NMq7Ttbm6PSVW68ZtISgoBgMYPkjeJgPali2hDQD0A0NLfW4ceOJjPHI7s6cYttykNWx3V4qqAFsZo126/ICNReBnTi1xf+/l6Pmcg9LrgHwSFwIyTiIAdcO5eEkCuuyxFV+0fiD+zLhpcr/R11zepw26CUxCcaB86eTn7rc042fMz7HpjfWHCVrk0BJpRuv2dYgDrqjbMkZQ7ERH3u7OJAMo41bEy1liWv8cmMt2rnIrLiyh/jTQg+5UsDtHB2LoIZJs65geb9zUrD2yDRfRy2FdPDJjLm642jj4l6mboLQkm/7etry4xkcTpzyWpfT1btyP6TIEzwZNFkp5wV6XJcDU/MhNbLc0jwf9Gvd8+O8pRRK5FgiqcU=
+    secure: bmLAnWezYpbbOOqsQRAywaM68A5+kgulMmpZIo1ZwXP3QwuvkRUS7ne/5dbYfOfNr3uSQbX0hBAwDFdy/gJETkHEh38AXoo3trxSgTChswYSDilqTYT9QkikG6bka2W3SZoQFyfhuTVCgItGJZDd7JFIZZJ2D7lWab5PXu+fbRx274Pt4JavuhyOorkNhACBr57UflKhxN0bZQSxJiIQqJdh3nM3+bwNBJbn8fK7cfA93WagC17YH8/uP/l6SaeErvYO2Hh3sBX1bIReAXdrT9WIsRz+Z/rDs1IownGSCK7xc0yy2mYgZAJeFADDykCjJhgQYVAEnwlmv3AroGIvvoGoEHUhH07p3aclPYShm8JIPxtkSbG9Vyjsq1ANek8QSlUtGqA7rWlHLsIMHerYU806Fsei1tI9jrrRRYT7oUsvnFfClFvbFFdZD9eX4qn63UVKGUauKTDNSlBopOr8Exb9lwvoG5q8SdDGytOOWv4McjCxGQl9DPTFAgvzjEr0FXvzCTicR+HkMiDPDJ0nQ3n7LYAkk/zai+T3vIlmJt0/x/pxMiWK2Vm8meqU7U1ZYMix1JbLHQHykK0zdNc6VX5vhI9FrThD0HSY6MiJV6Afe26lJOaRhX9pOA0XEgf7uk58IT/YH+8Q9wPY7SQfhn7iuWLLiakvW/KH7Hjq6YE=
 branches:
   only:
   - master
@@ -54,8 +53,8 @@ before_script:
 script:
 - |
   if [[ ! -z "$WP_VERSION" ]] ; then
-    phpunit
-    WP_MULTISITE=1 phpunit
+    phpunit .
+    WP_MULTISITE=1 phpunit .
   fi
 - |
   if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
