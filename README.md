@@ -63,7 +63,6 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 1. Click on “Admin” in your Google Analytics account menubar
 1. In the right-most column (“View”), click on “Goals”
 1. Click on the “+ New Goal” button
-1. Choose the “Template” radio button (selected by default) and click “Continue”
 1. Set the Goal description
 	1. Enter a name for the goal (I suggest “Contact Forms”)
 	1. Choose the “Event” radio button and click “Continue”
@@ -73,14 +72,14 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 	1. Optionally add a label if you want to define a goal for one specific form
 	1. Click the “Save” button
 
-### How to I use this with Google Tag Manager (`gtm.js`)? ###
+### How do I use this with Google Tag Manager (gtm.js)? ###
 
 1. In your Google Tag Manager workspace, add a new Trigger.
 	1. Choose trigger type: “Other/Custom Event”
 	1. Set “Event name” to “Contact Form 7”
 	1. Set “This trigger fires on” to “Some Custom Events”
 	1. Set the dropdowns to “Event contains Contact Form 7”
-	   - ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-trigger.png?raw=true)
+		- ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-trigger.png?raw=true)
 	1. Save the trigger
 1. In your Google Tag Manager workspace, add a new Tag.
 	1. Choose tag type: “Universal Analytics”
