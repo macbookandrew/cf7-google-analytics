@@ -45,7 +45,7 @@ class CF7_Google_Analytics {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backend_assets' ) );
 
 		/** Add notice about v1.7.0 changes */
-		if ( get_option( 'cf7-ga-170-notice-dismissed' ) === false ) {
+		if ( is_admin() && get_option( 'cf7-ga-170-notice-dismissed' ) === false ) {
 			add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 			add_action(
 				'admin_enqueue_scripts', function() {
