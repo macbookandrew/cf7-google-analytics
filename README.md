@@ -4,7 +4,7 @@
 **Donate link:** https://cash.me/$AndrewRMinionDesign
 **Requires at least:** 4.3
 **Tested up to:** 4.8
-**Stable tag:** 1.7.4
+**Stable tag:** 1.7.5
 **License:** GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -92,14 +92,14 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 
 ## Changelog ##
 
-### 1.7.3 ###
-- Add [`gtm.js` setup instructions](https://github.com/macbookandrew/cf7-google-analytics#how-to-i-use-this-with-google-tag-manager-gtmjs)
-- Update plugin coding standards
+### 1.7.5 ###
+- Update readme with goal tracking instructions
 
 ### 1.7.4 ###
-- Fix error on older PHP versions
+- Update readme with GDPR notes
 
 ### 1.7.3 ###
+- Add [`gtm.js` setup instructions](https://github.com/macbookandrew/cf7-google-analytics#how-to-i-use-this-with-google-tag-manager-gtmjs)
 - Update plugin coding standards
 
 ### 1.7.2 ###

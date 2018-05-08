@@ -18,7 +18,7 @@ class CF7_Google_Analytics {
 	 *
 	 * @var string
 	 */
-	public $version = '1.7.4';
+	public $version = '1.7.5';
 
 	/**
 	 * Get this plugin’s directory URL
