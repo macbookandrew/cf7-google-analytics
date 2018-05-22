@@ -15,10 +15,11 @@ Adds Google Analytics Event Tracking to all Contact Form 7 forms sitewide, using
 Supports the most popular Google Analytics plugins, including the following:
 
 - [Google Analytics by MonsterInsights](https://wordpress.org/plugins/google-analytics-for-wordpress/), formerly “Google Analytics by Yoast”
-- [Google Analytics Dashboard for WP](https://wordpress.org/plugins/google-analytics-dashboard-for-wp/) by Alin Marcu
+- [Google Analytics Dashboard for WP](https://wordpress.org/plugins/google-analytics-dashboard-for-wp/) by Alin Marcu/ExactMetrics
 - [Google Analytics](https://wordpress.org/plugins/googleanalytics/) by Kevin Sylvestre
 - [Google Analytics](https://wordpress.org/plugins/pc-google-analytics/) by Praveen Chauhan
 - [Analytics Tracker](https://wordpress.org/plugins/analytics-tracker/) by Valeriu Tihai
+- [Enhanced Ecommerce Google Analytics Plugin for WooCommerce](https://wordpress.org/plugins/enhanced-e-commerce-for-woocommerce-store/) by Tatvic
 - The default Google Analytics code copied from the Analytics admin panel (both the newer `gtag.js` and the older universal `analytics.js`)
 - Google Tag Manager (using `gtm.js`) (see additional setup instructions in the FAQ section)
 - Any other plugin using `gtag`, `ga`, `_gaq`, or `__gaTracker` as the Javascript function
