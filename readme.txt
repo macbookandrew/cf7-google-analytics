@@ -80,14 +80,14 @@ Note: you will begin seeing duplicate events in Google Analytics for each form s
 	1. Set “Event name” to “Contact Form 7”
 	1. Set “This trigger fires on” to “Some Custom Events”
 	1. Set the dropdowns to “Event contains Contact Form 7”
-		- ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-trigger.png?raw=true)
+		- ![Settings screenshot](https://raw.githubusercontent.com/macbookandrew/cf7-google-analytics/master/assets/gtm-trigger.png)
 	1. Save the trigger
 1. In your Google Tag Manager workspace, add a new Tag.
 	1. Choose tag type: “Universal Analytics”
 	1. Change “Track Type” to “Event”
 	1. Set “Category” to “Contact Form 7”
 	1. Set “Label” to “{{Event}}”
-		- ![Settings screenshot](https://github.com/macbookandrew/cf7-google-analytics/blob/master/assets/gtm-tag.png?raw=true)
+		- ![Settings screenshot](https://raw.githubusercontent.com/macbookandrew/cf7-google-analytics/master/assets/gtm-tag.png)
 	1. Click in the “Triggering” box and choose the trigger you set up above.
 1. Save and publish your changes.
 
@@ -100,7 +100,7 @@ Note: you will begin seeing duplicate events in Google Analytics for each form s
 - Update readme with GDPR notes
 
 = 1.7.3 =
-- Add [`gtm.js` setup instructions](https://github.com/macbookandrew/cf7-google-analytics#how-to-i-use-this-with-google-tag-manager-gtmjs)
+- Add [`gtm.js` setup instructions](https://github.com/macbookandrew/cf7-google-analytics#how-do-i-use-this-with-google-tag-manager-gtmjs)
 - Update plugin coding standards
 
 = 1.7.2 =
