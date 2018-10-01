@@ -68,7 +68,7 @@ Note: you will begin seeing duplicate events in Google Analytics for each form s
 	1. Enter a name for the goal (I suggest “Contact Forms”)
 	1. Choose the “Event” radio button and click “Continue”
 1. Set the Goal details
-	1. Set “Category Equals to Contact Form”
+	1. Set “Category Equals to Contact Form 7”
 	1. Set “Action Equals to ” and  enter the event you wish to track (see above for a list of events)
 	1. Optionally add a label if you want to define a goal for one specific form
 	1. Click the “Save” button
