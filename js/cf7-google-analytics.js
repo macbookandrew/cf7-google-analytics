@@ -82,6 +82,8 @@ document.addEventListener('wpcf7mailfailed', function(event) {
 	cf7GASendTrackingEvent(event.detail.contactFormId, 'Mail Failed');
 }, false);
 
+// FUTURE: add setting to disable wpcf7submit. See https://wordpress.org/support/topic/when-you-will-delete-sent-event/.
+
 /** Submit: Fires when an Ajax form submission has completed successfully, regardless of other incidents */
 document.addEventListener('wpcf7submit', function(event) {
 	cf7GASendTrackingEvent(event.detail.contactFormId, 'Sent'); // possibly misleading; change to “Submit”?
