@@ -61,6 +61,8 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 
 ### How do I set a goal in Google Analytics? ###
 
+**Note:** these instructions are provided for reference and may become out of date if Google Analytics changes their feature set or labels.  
+
 1. Click on “Admin” in your Google Analytics account menubar
 1. In the right-most column (“View”), click on “Goals”
 1. Click on the “+ New Goal” button
