@@ -72,7 +72,7 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 1. Set the Goal details
 	1. Set “Category Equals to Contact Form 7”
 	1. Set “Action Equals to ” and  enter the event you wish to track (see above for a list of events)
-	1. Optionally add a label if you want to define a goal for one specific form
+	1. Optionally add a label using the name of the form if you want to define a goal for one specific form.
 	1. Click the “Save” button
 
 ### How do I use this with Google Tag Manager (gtm.js)? ###
