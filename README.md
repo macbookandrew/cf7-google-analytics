@@ -3,7 +3,7 @@
 **Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals  
 **Donate link:** https://cash.me/$AndrewRMinionDesign  
 **Requires at least:** 4.3  
-**Tested up to:** 4.8  
+**Tested up to:** 4.9.8  
 **Stable tag:** 1.7.5  
 **License:** GPL2  
 
