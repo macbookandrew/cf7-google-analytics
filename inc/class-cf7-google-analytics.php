@@ -71,7 +71,11 @@ class CF7_Google_Analytics {
 			$this->send_actions = get_option( 'cf7_ga_send_actions' );
 		}
 
-		if ( array_key_exists( $action, $this->send_actions ) ) {
+		if ( 'all' === $action ) {
+			return $this->send_actions;
+		}
+
+		if ( is_array( $this->send_actions ) && array_key_exists( $action, $this->send_actions ) ) {
 			return $this->send_actions[ $action ];
 		}
 
@@ -133,7 +137,7 @@ class CF7_Google_Analytics {
 	}
 
 	/**
-	 * Send Google Analytics tracking events when form is successfully submitted and mail sent
+	 * Send Google Analytics tracking events when form is successfully submitted and mail sent.
 	 *
 	 * @param  array $items  Return from CF7.
 	 * @param  array $result WPCF7 data about status, message, etc.
@@ -173,9 +177,10 @@ class CF7_Google_Analytics {
 	}
 
 	/**
-	 * Enqueue script for DOM events
+	 * Enqueue script for DOM events.
 	 */
 	public function enqueue_assets() {
+		// Get all forms.
 		$form_args   = array(
 			'post_type'      => 'wpcf7_contact_form',
 			'posts_per_page' => -1,
@@ -187,8 +192,11 @@ class CF7_Google_Analytics {
 			$forms[ 'ID_' . $form->ID ] = $form->post_title;
 		}
 
+		// Get options.
+		$send_actions = get_option( 'cf7_ga_send_actions' );
+
 		wp_enqueue_script( 'wpcf7-ga-events', $this->get_plugin_dir_url() . 'js/cf7-google-analytics.min.js', array( 'contact-form-7' ), $this->version, true );
-		wp_add_inline_script( 'wpcf7-ga-events', 'var cf7FormIDs = ' . wp_json_encode( $forms ), 'before' );
+		wp_add_inline_script( 'wpcf7-ga-events', 'var cf7GASendActions = ' . wp_json_encode( $this->get_send_actions( 'all' ) ) . ', cf7FormIDs = ' . wp_json_encode( $forms ), 'before' );
 	}
 
 	/**
