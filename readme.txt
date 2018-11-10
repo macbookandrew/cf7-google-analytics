@@ -3,8 +3,8 @@ Contributors: macbookandrew
 Tags: contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals
 Donate link: https://cash.me/$AndrewRMinionDesign
 Requires at least: 4.3
-Tested up to: 4.9.8
-Stable tag: 1.7.5
+Tested up to: 5.0.0
+Stable tag: 1.8.0
 License: GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -27,6 +27,7 @@ Supports the most popular Google Analytics plugins, including the following:
 
 == Installation ==
 1. Install and activate the plugin
+1. Enable the actions you would like to send (if you skip this step, it will send all available actions).
 1. Enjoy!
 
 == Frequently Asked Questions ==
@@ -51,13 +52,15 @@ Check your statistics in Google Analytics under *Behavior > Events* or under *Re
 
 = What events will be shown? =
 
+This depends on the settings you choose.
+
 - **Invalid** - Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because there are fields with invalid input.
 - **Spam** - Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because a possible spam activity has been detected.
 - **Mail Sent** - Fires when an Ajax form submission has completed successfully, and mail has been sent.
 - **Mail Failed** - Fires when an Ajax form submission has completed successfully, but it has failed in sending mail.
-- **Sent** - Fires when an Ajax form submission has completed successfully, regardless of other incidents. (This is the old plugin behavior.)
-
-Note: you will begin seeing duplicate events in Google Analytics for each form submission: “Sent” plus one of the other four, depending on what happened on submission.
+- **Sent** - Fires when an Ajax form submission has completed successfully, regardless of other incidents.
+	- This is the only event available if you have Contact Form 7 version 4.7 or earlier.
+	- This is the only original event sent by this plugin. I recommend enabling the other four and disabling this event, unless you need it for old goals you had set up from several years ago.
 
 = How do I set a goal in Google Analytics? =
 
@@ -94,6 +97,9 @@ Note: these instructions are provided for reference and may become out of date i
 1. Save and publish your changes.
 
 == Changelog ==
+
+= 1.8.0 =
+- Add options to enable/disable the available event actions.
 
 = 1.7.5 =
 - Update readme with goal tracking instructions
