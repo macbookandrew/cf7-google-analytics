@@ -34,7 +34,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="plugin-domain" />
+			<property name="text_domain" type="array" value="cf7_ga" />
 		</properties>
 	</rule>
 
@@ -48,7 +48,7 @@
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
-	<config name="testVersion" value="5.2-99.0"/>
+	<config name="testVersion" value="5.3-99.0"/>
 
 	<!-- Include PHP rules. -->
 	<rule ref="PHPCompatibility" />
