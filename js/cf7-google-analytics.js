@@ -21,7 +21,7 @@
 function cf7GASendTrackingEvent(formId, eventLabel, eventKey) {
 
 	// If there are settings but this eventKey is not enabled in WP settings, bail out now.
-	if (Object.keys(cf7GASendActions).length > 0 && 'undefined' === typeof cf7GASendActions.eventKey || 'true' !== cf7GASendActions.eventKey) {
+	if (Object.keys(cf7GASendActions).length > 0 && ('undefined' === typeof cf7GASendActions[eventKey] || 'true' !== cf7GASendActions[eventKey])) {
 		return;
 	}
 
