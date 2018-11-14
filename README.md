@@ -4,7 +4,7 @@
 **Donate link:** https://cash.me/$AndrewRMinionDesign  
 **Requires at least:** 4.3  
 **Tested up to:** 5.0.0  
-**Stable tag:** 1.8.0  
+**Stable tag:** 1.8.2  
 **License:** GPL2  
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
@@ -97,6 +97,14 @@ Note: these instructions are provided for reference and may become out of date i
 1. Save and publish your changes.
 
 ## Changelog ##
+
+### 1.8.2 ###
+- Cache form titles and IDs for better performance.
+- Remove 1.7.0 admin upgrade notices.
+
+### 1.8.1 ###
+- Fix a bug causing events not to send due to upgrade logic.
+- Set default options if user has not selected events to send.
 
 ### 1.8.0 ###
 - Add options to enable/disable the available event actions.

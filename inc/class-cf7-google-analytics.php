@@ -18,7 +18,7 @@ class CF7_Google_Analytics {
 	 *
 	 * @var string
 	 */
-	public $version = '1.8.1';
+	public $version = '1.8.2';
 
 	/**
 	 * Available actions.
@@ -120,17 +120,8 @@ class CF7_Google_Analytics {
 		add_action( 'admin_init', array( $this, 'settings_api' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 
-		/** Add notice about v1.7.0 changes */
-		if ( is_admin() && get_option( 'cf7-ga-170-notice-dismissed' ) === false ) {
-			add_action( 'admin_notices', array( $this, 'admin_notices_170' ) );
-			add_action(
-				'admin_enqueue_scripts',
-				function() {
-					wp_enqueue_script( 'admin-cf7-ga' );
-				}
-			);
-			add_action( 'wp_ajax_cf7_ga_dismiss_notice_170', array( $this, 'cf7_ga_dismiss_notice_170' ) );
-		}
+		/** Cache form IDs and titles on form save */
+		add_action( 'save_post_wpcf7_contact_form', array( $this, 'update_form_ids' ) );
 
 		/** Add notice about v1.8.0 changes */
 		if ( is_admin() && get_option( 'cf7-ga-180-notice-dismissed' ) === false ) {
@@ -189,6 +180,43 @@ class CF7_Google_Analytics {
 	 * Enqueue script for DOM events.
 	 */
 	public function enqueue_assets() {
+		wp_enqueue_script( 'wpcf7-ga-events', $this->get_plugin_dir_url() . 'js/cf7-google-analytics.min.js', array( 'contact-form-7' ), $this->version, true );
+		wp_add_inline_script( 'wpcf7-ga-events', 'var cf7GASendActions = ' . wp_json_encode( $this->get_send_actions( 'all' ) ) . ', cf7FormIDs = ' . $this->get_form_ids(), 'before' );
+	}
+
+	/**
+	 * Enqueue backend assets
+	 */
+	public function enqueue_backend_assets() {
+		wp_register_script( 'admin-cf7-ga', $this->get_plugin_dir_url() . 'js/admin.min.js', array( 'jquery' ), $this->version, true );
+	}
+
+	/**
+	 * Get or create form IDs transient.
+	 *
+	 * @since 1.8.2
+	 *
+	 * @return string JSON object with form IDs and titles.
+	 */
+	public function get_form_ids() {
+		$form_ids = get_transient( 'cf7_ga_form_ids' );
+
+		if ( empty( $form_ids ) ) {
+			$form_ids = $this->update_form_ids();
+		}
+
+		return $form_ids;
+	}
+
+	/**
+	 * Update form IDs transient.
+	 *
+	 * @since 1.8.2
+	 *
+	 * @return string JSON object with form IDs and titles.
+	 */
+	public function update_form_ids() {
+
 		// Get all forms.
 		$form_args   = array(
 			'post_type'      => 'wpcf7_contact_form',
@@ -201,15 +229,11 @@ class CF7_Google_Analytics {
 			$forms[ 'ID_' . $form->ID ] = $form->post_title;
 		}
 
-		wp_enqueue_script( 'wpcf7-ga-events', $this->get_plugin_dir_url() . 'js/cf7-google-analytics.min.js', array( 'contact-form-7' ), $this->version, true );
-		wp_add_inline_script( 'wpcf7-ga-events', 'var cf7GASendActions = ' . wp_json_encode( $this->get_send_actions( 'all' ) ) . ', cf7FormIDs = ' . wp_json_encode( $forms ), 'before' );
-	}
+		$form_ids = wp_json_encode( $forms );
 
-	/**
-	 * Enqueue backend assets
-	 */
-	public function enqueue_backend_assets() {
-		wp_register_script( 'admin-cf7-ga', $this->get_plugin_dir_url() . 'js/admin.min.js', array( 'jquery' ), $this->version, true );
+		set_transient( 'cf7_ga_form_ids', $form_ids );
+
+		return $form_ids;
 	}
 
 	/**
@@ -365,38 +389,6 @@ class CF7_Google_Analytics {
 		?>
 		<label><input type="checkbox" name="cf7_ga_send_actions[<?php echo esc_attr( $action ); ?>]" value="true" <?php checked( 'true', $this->get_send_actions( $action ) ); ?>/><?php echo esc_html( $this->actions[ $action ]['description'] ); ?></label>
 		<?php
-	}
-
-	/**
-	 * Add admin notice about new tracking behavior.
-	 *
-	 * @since 1.7.0
-	 */
-	public function admin_notices_170() {
-		?>
-		<div class="notice notice-info cf7-ga-notice is-dismissible" data-version="170">
-			<h2>Contact Form 7 to Google Analytics Update</h2>
-			<p>The tracking behavior has <strong>added more events</strong> since version 1.7.0. It now sends data to Google Analytics about <strong>all</strong> form submission attempts. Here is a list of the events you will begin to see since the upgrade:</p>
-			<ul>
-				<li><strong>Invalid</strong>: Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because there are fields with invalid input.
-				<li><strong>Spam</strong>: Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because a possible spam activity has been detected.
-				<li><strong>Mail Sent</strong>: Fires when an Ajax form submission has completed successfully, and mail has been sent.
-				<li><strong>Mail Failed</strong>: Fires when an Ajax form submission has completed successfully, but it has failed in sending mail.
-				<li><strong>Sent</strong>: Fires when an Ajax form submission has completed successfully, regardless of other incidents. (This is the old plugin behavior.)
-			</ul>
-
-			<p>Note: you will begin seeing <strong>multiple events</strong> in Google Analytics for each form submission: “Sent” plus one of the other four, depending on what happened on submission.</p>
-		</div>
-		<?php
-	}
-
-	/**
-	 * Update option for CF7 GA 170 notes.
-	 *
-	 * @since 1.7.0
-	 */
-	public function cf7_ga_dismiss_notice_170() {
-		update_option( 'cf7-ga-170-notice-dismissed', 1, false );
 	}
 
 	/**
