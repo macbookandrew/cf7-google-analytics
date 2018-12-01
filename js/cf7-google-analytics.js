@@ -55,17 +55,20 @@ function cf7GASendTrackingEvent(formId, eventLabel, eventKey) {
 	// Universal Google Analytics tracking code (analytics.js).
 	// Google Analytics Dashboard for WordpPress (GADWP).
 	if ('undefined' !== typeof ga) {
-		ga('send', 'event', 'Contact Form', eventLabel, formLabel);
+		ga('send', 'event', 'Contact Form', eventLabel, formLabel); // TODO: remove me after a while.
+		ga('send', 'event', 'Contact Form 7', eventLabel, formLabel);
 	}
 
 	// Classic Google Analytics default code.
 	if ('undefined' !== typeof _gaq) {
-		_gaq.push(['_trackEvent', 'Contact Form', eventLabel, formLabel]);
+		_gaq.push(['_trackEvent', 'Contact Form', eventLabel, formLabel]); // TODO: remove me after a while.
+		_gaq.push(['_trackEvent', 'Contact Form 7', eventLabel, formLabel]);
 	}
 
 	// Monster Insights.
 	if ('undefined' !== typeof __gaTracker) {
-		__gaTracker('send', 'event', 'Contact Form', eventLabel, formLabel);
+		__gaTracker('send', 'event', 'Contact Form', eventLabel, formLabel); // TODO: remove me after a while.
+		__gaTracker('send', 'event', 'Contact Form 7', eventLabel, formLabel);
 	}
 }
 

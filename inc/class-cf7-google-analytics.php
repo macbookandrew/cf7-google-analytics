@@ -18,7 +18,7 @@ class CF7_Google_Analytics {
 	 *
 	 * @var string
 	 */
-	public $version = '1.8.3';
+	public $version = '1.8.4';
 
 	/**
 	 * Available actions.
@@ -108,6 +108,7 @@ class CF7_Google_Analytics {
 		/** Check version and load the correct file */
 		$wpcf7 = get_option( 'wpcf7' );
 		if ( $wpcf7['version'] <= '4.7' ) {
+			// TODO: drop support.
 			add_filter( 'wpcf7_ajax_json_echo', array( $this, 'add_old_tracking' ), 10, 2 );
 		} else {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
