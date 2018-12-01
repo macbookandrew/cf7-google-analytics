@@ -5,7 +5,7 @@
  * @subpackage CF7_Google_Analytics
  */
 
-/* global cf7GASendActions, dataLayer, ga, _gaq, __gaTracker, gtag */
+/* global cf7FormIDs, cf7GASendActions, dataLayer, ga, _gaq, __gaTracker, gtag */
 
 'use strict';
 
@@ -25,8 +25,7 @@ function cf7GASendTrackingEvent(formId, eventLabel, eventKey) {
 		return;
 	}
 
-	var formLabel = '',
-		cf7FormIDs;
+	var formLabel = '';
 
 	// Set name of CF7 form.
 	if ('undefined' !== typeof cf7FormIDs) {

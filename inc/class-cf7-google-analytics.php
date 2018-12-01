@@ -18,7 +18,7 @@ class CF7_Google_Analytics {
 	 *
 	 * @var string
 	 */
-	public $version = '1.8.2';
+	public $version = '1.8.3';
 
 	/**
 	 * Available actions.
