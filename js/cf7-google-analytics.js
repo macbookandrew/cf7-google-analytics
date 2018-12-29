@@ -37,9 +37,9 @@ function cf7GASendTrackingEvent(formId, eventLabel, eventKey) {
 	// Global Site Tag (gtag.js).
 	if ('undefined' !== typeof gtag) {
 		gtag('event', 'contact_form_7', {
-			event_category: 'Contact Form 7',
-			event_action: eventLabel,
-			event_label: formLabel
+			event_category: 'Contact Form 7', // eslint-disable-line camelcase
+			event_action: eventLabel, // eslint-disable-line camelcase
+			event_label: formLabel // eslint-disable-line camelcase
 		});
 	}
 
@@ -47,8 +47,8 @@ function cf7GASendTrackingEvent(formId, eventLabel, eventKey) {
 	if ('undefined' !== typeof dataLayer) {
 		dataLayer.push({
 			event: 'Contact Form 7',
-			event_action: eventLabel,
-			event_label: formLabel
+			event_action: eventLabel, // eslint-disable-line camelcase
+			event_label: formLabel // eslint-disable-line camelcase
 		});
 	}
 
