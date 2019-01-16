@@ -158,7 +158,7 @@ class CF7_Google_Analytics {
 					gtag( "event", "contact_form_7", {"event_category": "Contact Form 7", "event_action": "Sent", "event_label": "%1$s"} );
 				}
 				if ( typeof dataLayer !== "undefined" ) {
-					dataLayer.push({ "event": "Contact Form 7", "event_action": "Sent", "event_label": formLabel });
+					dataLayer.push({ "event": "Contact Form 7", "event_action": "Sent", "event_label": %1$s });
 				}
 				if ( typeof ga !== "undefined" ) {
 					ga( "send", "event", "Contact Form", "Sent", "%1$s" );
