@@ -55,19 +55,16 @@ function cf7GASendTrackingEvent(formId, eventLabel, eventKey) {
 	// Universal Google Analytics tracking code (analytics.js).
 	// Google Analytics Dashboard for WordpPress (GADWP).
 	if ('undefined' !== typeof ga) {
-		ga('send', 'event', 'Contact Form', eventLabel, formLabel); // TODO: remove me after a while.
 		ga('send', 'event', 'Contact Form 7', eventLabel, formLabel);
 	}
 
 	// Classic Google Analytics default code.
 	if ('undefined' !== typeof _gaq) {
-		_gaq.push(['_trackEvent', 'Contact Form', eventLabel, formLabel]); // TODO: remove me after a while.
 		_gaq.push(['_trackEvent', 'Contact Form 7', eventLabel, formLabel]);
 	}
 
 	// Monster Insights.
 	if ('undefined' !== typeof __gaTracker) {
-		__gaTracker('send', 'event', 'Contact Form', eventLabel, formLabel); // TODO: remove me after a while.
 		__gaTracker('send', 'event', 'Contact Form 7', eventLabel, formLabel);
 	}
 }
@@ -93,8 +90,6 @@ document.addEventListener('wpcf7mailsent', function(event) {
 document.addEventListener('wpcf7mailfailed', function(event) {
 	cf7GASendTrackingEvent(event.detail.contactFormId, 'Mail Failed', 'mail_failed');
 }, false);
-
-// FUTURE: add setting to disable wpcf7submit. See https://wordpress.org/support/topic/when-you-will-delete-sent-event/.
 
 /** Submit: Fires when an Ajax form submission has completed successfully, regardless of other incidents */
 document.addEventListener('wpcf7submit', function(event) {
