@@ -18,7 +18,7 @@ class CF7_Google_Analytics {
 	 *
 	 * @var string
 	 */
-	public $version = '1.8.5';
+	public $version = '1.8.6';
 
 	/**
 	 * Available actions.
@@ -136,16 +136,16 @@ class CF7_Google_Analytics {
 			add_action( 'wp_ajax_cf7_ga_dismiss_notice_180', array( $this, 'cf7_ga_dismiss_notice_180' ) );
 		}
 
-		/** Add notice about v1.8.5 changes */
-		if ( is_admin() && get_option( 'cf7-ga-185-notice-dismissed' ) === false ) {
-			add_action( 'admin_notices', array( $this, 'admin_notices_185' ) );
+		/** Add notice about v1.8.6 changes */
+		if ( is_admin() && get_option( 'cf7-ga-186-notice-dismissed' ) === false ) {
+			add_action( 'admin_notices', array( $this, 'admin_notices_186' ) );
 			add_action(
 				'admin_enqueue_scripts',
 				function() {
 					wp_enqueue_script( 'admin-cf7-ga' );
 				}
 			);
-			add_action( 'wp_ajax_cf7_ga_dismiss_notice_185', array( $this, 'cf7_ga_dismiss_notice_185' ) );
+			add_action( 'wp_ajax_cf7_ga_dismiss_notice_186', array( $this, 'cf7_ga_dismiss_notice_186' ) );
 		}
 	}
 
@@ -430,13 +430,13 @@ class CF7_Google_Analytics {
 	/**
 	 * Add admin notice about options for disabling events.
 	 *
-	 * @since 1.8.5
+	 * @since 1.8.6
 	 */
-	public function admin_notices_185() {
+	public function admin_notices_186() {
 		?>
-		<div class="notice notice-info cf7-ga-notice is-dismissible" data-version="185">
+		<div class="notice notice-info cf7-ga-notice is-dismissible" data-version="186">
 			<h2>Contact Form 7 to Google Analytics Important Change</h2>
-			<p>If you are using any of these integrations listed below, the event label you will see in Google Analytics <strong>has been changed</strong> from “Contact Form” to “Contact Form 7” for consistency with all integrations.</p>
+			<p>If you are using any of these integrations listed below, the category you will see in Google Analytics <strong>has been changed</strong> from “Contact Form” to “Contact Form 7” for consistency with all integrations.</p>
 			<p>Affected integrations:</p>
 			<ul style="list-style-type: disc; margin-left: 1.5em;">
 				<li>Universal Google Analytics tracking code (analytics.js)</li>
@@ -445,18 +445,18 @@ class CF7_Google_Analytics {
 				<li>Monster Insights</li>
 				<li>Any other integration using these Javascript objects: <code>ga</code>, <code>_gaq</code>, <code>__gaTracker</code></li>
 			</ul>
-			<p>If you were using “Contact Form” as the event label in your goal, <strong>you must change your goals</strong> to reflect this change.</p>
+			<p>If you were using “Contact Form” as the category in your goal, <strong>you must change your goals</strong> to reflect this change.</p>
 		</div>
 		<?php
 	}
 
 	/**
-	 * Update option for CF7 GA 185 notes.
+	 * Update option for CF7 GA 186 notes.
 	 *
-	 * @since 1.8.5
+	 * @since 1.8.6
 	 */
-	public function cf7_ga_dismiss_notice_185() {
-		update_option( 'cf7-ga-185-notice-dismissed', 1, false );
+	public function cf7_ga_dismiss_notice_186() {
+		update_option( 'cf7-ga-186-notice-dismissed', 1, false );
 	}
 
 }
