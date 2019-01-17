@@ -73,9 +73,9 @@ Note: these instructions are provided for reference and may become out of date i
 	1. Enter a name for the goal (I suggest “Contact Forms”)
 	1. Choose the “Event” radio button and click “Continue”
 1. Set the Goal details
-	1. Set “Category Equals to Contact Form 7”
-	1. Set “Action Equals to ” and  enter the event you wish to track (see above for a list of events)
-	1. Optionally add a label using the name of the form if you want to define a goal for one specific form.
+	1. Set the “Category Equals to” field to “Contact Form 7”
+	1. Set the “Action Equals to” field to the event you wish to track ([see above](https://wordpress.org/plugins/cf7-google-analytics/#what%20events%20will%20be%20shown%3F) for a list of events)
+	1. If you want to define goals for specific form, enter the name of your form in the “Label” field
 	1. Click the “Save” button
 
 = How do I use this with Google Tag Manager (gtm.js)? =
