@@ -2,9 +2,11 @@
 .distignore
 .editorconfig
 .git
+.github
 .gitignore
 .gitlab-ci.yml
 .travis.yml
+.wordpress-org
 .DS_Store
 Thumbs.db
 behat.yml
@@ -13,7 +15,7 @@ circle.yml
 composer.json
 composer.lock
 deploy.sh
-Gruntfile.js
+gruntfile.js
 multisite.xml
 multisite.xml.dist
 package.json

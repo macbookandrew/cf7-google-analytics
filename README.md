@@ -1,11 +1,11 @@
 # Contact Form 7 Google Analytics #
-**Contributors:** [macbookandrew](https://profiles.wordpress.org/macbookandrew)  
-**Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals  
-**Donate link:** https://cash.me/$AndrewRMinionDesign  
-**Requires at least:** 4.3  
-**Tested up to:** 5.0.0  
-**Stable tag:** 1.8.7  
-**License:** GPL2  
+**Contributors:** [macbookandrew](https://profiles.wordpress.org/macbookandrew)
+**Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals
+**Donate link:** https://cash.me/$AndrewRMinionDesign
+**Requires at least:** 4.3
+**Tested up to:** 5.7.0
+**Stable tag:** 1.8.7
+**License:** GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
 
