@@ -85,14 +85,14 @@ Note: these instructions are provided for reference and may become out of date i
 	1. Set “Event name” to “Contact Form 7”
 	1. Set “This trigger fires on” to “Some Custom Events”
 	1. Set the dropdowns to “Event contains Contact Form 7”
-		- ![Settings screenshot](https://raw.githubusercontent.com/macbookandrew/cf7-google-analytics/master/assets/gtm-trigger.png)
+		- ![Settings screenshot](https://raw.githubusercontent.com/macbookandrew/cf7-google-analytics/master/.wordpress-org/gtm-trigger.png)
 	1. Save the trigger
 1. In your Google Tag Manager workspace, add a new Tag.
 	1. Choose tag type: “Universal Analytics”
 	1. Change “Track Type” to “Event”
 	1. Set “Category” to “Contact Form 7”
 	1. Set “Label” to “{{Event}}”
-		- ![Settings screenshot](https://raw.githubusercontent.com/macbookandrew/cf7-google-analytics/master/assets/gtm-tag.png)
+		- ![Settings screenshot](https://raw.githubusercontent.com/macbookandrew/cf7-google-analytics/master/.wordpress-org/gtm-tag.png)
 	1. Click in the “Triggering” box and choose the trigger you set up above.
 1. Save and publish your changes.
 
