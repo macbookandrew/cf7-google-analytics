@@ -1,13 +1,15 @@
 # Contact Form 7 Google Analytics #
-**Contributors:** [macbookandrew](https://profiles.wordpress.org/macbookandrew)
-**Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals, analytics
-**Donate link:** https://cash.me/$AndrewRMinionDesign
-**Requires at least:** 4.3
-**Tested up to:** 5.7.0
-**Stable tag:** 1.8.8
-**License:** GPL2
+- **Contributors:** [macbookandrew](https://profiles.wordpress.org/macbookandrew)
+- **Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals, analytics
+- **Donate link:** https://cash.me/$AndrewRMinionDesign
+- **Requires at least:** 4.3
+- **Tested up to:** 6.0.0
+- **Stable tag:** 1.8.8
+- **License:** GPL2
 
 Adds Google Analytics Event Tracking to all Contact Form 7 forms.
+
+**Note**: once you are using Google Analytics v4, this plugin may no longer be necessary. See [Enhanced event measurement documentation](https://support.google.com/analytics/answer/9216061) for information on how to enable event measurement in Google Analytics v4.
 
 ## Description ##
 Adds Google Analytics Event Tracking to all Contact Form 7 forms sitewide, using “Contact Form” as the Event Category, the Contact Form 7 event as the Event Action, and the form name as the Event Label.
