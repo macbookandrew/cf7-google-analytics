@@ -106,7 +106,7 @@ class CF7_Google_Analytics {
 	public function __construct() {
 
 		/** Check version and load the correct file */
-		$wpcf7 = get_option( 'wpcf7' );
+		$wpcf7 = get_option( 'wpcf7', array( 'version' => '5' ) );
 		if ( $wpcf7['version'] <= '4.7' ) {
 			// TODO: drop support.
 			add_filter( 'wpcf7_ajax_json_echo', array( $this, 'add_old_tracking' ), 10, 2 );
