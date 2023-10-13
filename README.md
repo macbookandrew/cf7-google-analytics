@@ -3,7 +3,7 @@
 - **Tags:** contact form, contact form 7, cf7, contactform7, google analytics, ga, universal, forms, form, track, tracking, event, events, goal, goals, analytics
 - **Donate link:** https://cash.me/$AndrewRMinionDesign
 - **Requires at least:** 4.3
-- **Tested up to:** 6.0.0
+- **Tested up to:** 6.3.0
 - **Stable tag:** 1.8.8
 - **License:** GPL2
 
@@ -99,6 +99,9 @@ Note: these instructions are provided for reference and may become out of date i
 1. Save and publish your changes.
 
 ## Changelog ##
+
+### 1.8.9 ###
+- Fix undefined index issue in new installations
 
 ### 1.8.8 ###
 - Update tested-up-to version and automatic deployment.
