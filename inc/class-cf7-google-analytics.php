@@ -13,12 +13,13 @@
  * @subpackage CF7_Google_Analytics
  */
 class CF7_Google_Analytics {
+
 	/**
 	 * Plugin version
 	 *
 	 * @var string
 	 */
-	public $version = '1.8.7';
+	public $version = CF7GA_PLUGIN_VERSION;
 
 	/**
 	 * Available actions.
