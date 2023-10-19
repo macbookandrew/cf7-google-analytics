@@ -194,7 +194,7 @@ class CF7_Google_Analytics {
 	 */
 	public function enqueue_assets() {
 		wp_enqueue_script( 'wpcf7-ga-events', $this->get_plugin_dir_url() . 'js/cf7-google-analytics.min.js', array( 'contact-form-7' ), $this->version, true );
-		wp_add_inline_script( 'wpcf7-ga-events', 'var cf7GASendActions = ' . wp_json_encode( $this->get_send_actions( 'all' ) ) . ', cf7FormIDs = ' . $this->get_form_ids(), 'before' );
+		wp_add_inline_script( 'wpcf7-ga-events', 'var cf7GASendActions = ' . wp_json_encode( $this->get_send_actions( 'all' ) ) . ', cf7FormIDs = ' . $this->get_form_ids() . ';', 'before' );
 	}
 
 	/**
